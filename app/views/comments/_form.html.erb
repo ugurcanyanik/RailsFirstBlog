@@ -1,0 +1,15 @@
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <p>
+    <%= f.label :Isminiz %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :Yorumunuz %><br>
+    <%= f.text_field :body %>
+  </p>
+  <br>
+  <p>
+    <%= f.submit :Kaydet %>
+  </p>  
+<% end %>
+  
