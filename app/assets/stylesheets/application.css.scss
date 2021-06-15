@@ -11,7 +11,13 @@ nav.share iframe {border:0; margin-top:0; padding-top:0;} /* if using medium siz
 
 
 @import 'normalize';
-
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
 
 html, body {
 	font-family: 'Raleway', sans-serif;
@@ -27,17 +33,17 @@ a {
 }
 
 #sidebar {
-	width: 250px;
+	width: 200px;
 	position: fixed;
 	left: 0;
 	top: 0;
 	height: 100%;
-	background: #f5f7f9;
+	background: #dfe6e9;
 	padding: 7em 0 0 0;
 	border-right: 1px solid #d6dce0;
 
 	#logo {
-    left:145px;
+    
     position: absolute;
     html, body {
     font-family: 'Raleway', sans-serif;
@@ -58,14 +64,14 @@ a {
       left: 0;
       top: 0;
       height: 100%;
-      background: #f5f7f9;
+      background: #dfe6e9;
       padding: 7em 0 0 0;
       border-right: 1px solid #d6dce0;
       #logo {
         width: 40px;
         position: absolute;
         right: 3em;
-        top: 3em;
+        top: 1em;
       }
       ul {
         list-style: none;
