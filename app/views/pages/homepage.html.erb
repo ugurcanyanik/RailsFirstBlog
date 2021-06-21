@@ -3,69 +3,55 @@
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <style>
 .mySlides {display:none}
 .w3-left, .w3-right, .w3-badge {cursor:pointer}
 .w3-badge {height:13px;width:13px;padding:0}
 </style>
-<body>
-
-<div style="height: 100%;
-background-size: cover;background-image: url(<%= asset_path 'Background.png' %>)">
+<body style="background-size:120%; background-repeat:no-repeat; height: 100%;
+ background-image: url(<%= asset_path 'Background.png'%>)" >
+<div id="main_content" style="float:left">
   <div class="mySlides" > 
-    <div id="main_content">
-      <div id="page_wrapper">
-        <div id="content" style="margin-top:100px;">
-          <h1 style="color:white"> Enhance Your Customer Experience with AI based solutions</h1>
-          <br><br>
-          <ul style:"">
-            &emsp;<span class="dot"></span><h5 style="color:white;display:inline;"> Product Pages</h5>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-            <span class="dot"></span><h5 style="color:white;display:inline;"> Social Media</h5>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-            <span class="dot"></span><h5 style="color:white;display:inline;"> Videos</h5>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-            <span class="dot"></span><h5 style="color:white;display:inline;"> Online Communities</h5>
-          </ul>
-        </div>
-        <center>
-          <div style="margin-top:305px;">
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-          </div>
-        </center>
-      </div>
-    </div>
-  </div>
-</div>
-<div style="height: 100%;
-background-size: cover;background-image: url(<%= asset_path 'Background1.png' %>)">
-  <div class="mySlides" > 
-  <div id="main_content">
     <div id="page_wrapper">
-      <div id="content">
-        <h1 style="color:white"> Artificial Intelligence & Natural Language Processing</h1>
-        <h3 style="color:white;">Transform unstructured data into structured
-         form where you can take action in a short while.
-        </h3>
-        <br><br>
-        <ul style:"">
-        <h5 style="color:white;"><span class="dot"></span> E-commerce</h5><br>
-        <h5 style="color:white;"><span class="dot"></span> M-commerce</h5><br>
-        <h5 style="color:white;"><span class="dot"></span> Customer Experience Management</h5><br>
-        <h5 style="color:white;"><span class="dot"></span> Customer Relationship Management</h5>
+      <div id="content" style="margin-top:100px;">
+        <h1 style="color:white"> Enhance Your Customer Experience with AI based solutions</h1>
+        <br><br><br><br>
+        <ul>
+          &emsp;
+          <span class="dot"></span><h5 style="color:white;display:inline;"> Product Pages</h5>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <span class="dot"></span><h5 style="color:white;display:inline;"> Social Media</h5>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <span class="dot"></span><h5 style="color:white;display:inline;"> Videos</h5>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <span class="dot"></span><h5 style="color:white;display:inline;"> Online Communities</h5>
         </ul>
       </div>
-      <center>
-        <div style="margin-top:142px;">
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-        </div>
-        </center>
     </div>
   </div>
+  <div class="mySlides"> 
+      <div id="page_wrapper">
+        <div id="content" style="margin-top:100px;">
+          <h1 style="color:white"> Artificial Intelligence & Natural Language Processing</h1>
+          <h3 style="color:white;">Transform unstructured data into structured
+          form where you can take action in a short while.
+          </h3>
+          <br><br>
+          <ul>
+            <h5 style="color:white;"><span class="dot"></span> E-commerce</h5><br>
+            <h5 style="color:white;"><span class="dot"></span> M-commerce</h5><br>
+            <h5 style="color:white;"><span class="dot"></span> Customer Experience Management</h5><br>
+            <h5 style="color:white;"><span class="dot"></span> Customer Relationship Management</h5>
+          </ul>
+          
+        </div>
+      </div>
+  </div>  
+  <center >
+    <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="margin-left:100px;">
+      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    </div>
+  </center >
 </div>
-  </div>
-  </div>
-
-
 
 <script>
 var slideIndex = 1;
@@ -76,6 +62,14 @@ function plusDivs(n) {
 }
 
 function currentDiv(n) {
+  if (n == 2) {
+    var body = document.getElementsByTagName('body')[0];
+    body.style.backgroundImage = 'url(<%= asset_path 'Background1.png'%>)';
+    }
+  else{
+    var body = document.getElementsByTagName('body')[0];
+    body.style.backgroundImage = 'url(<%= asset_path 'Background.png'%>)';
+  };
   showDivs(slideIndex = n);
 }
 
@@ -95,6 +89,5 @@ function showDivs(n) {
   dots[slideIndex-1].className += " w3-white";
 }
 </script>
-
 </body>
 </html> 
