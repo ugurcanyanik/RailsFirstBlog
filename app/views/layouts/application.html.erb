@@ -7,32 +7,88 @@
     <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
-  <body style="background-image: url(<%= asset_path 'Background.png' %>); background-size: cover;">
+  <body style="height: 100%; background-image: url(<%= asset_path 'Background.png' %>);">
     <div id="sidebar">
       <div id="logo" style="margin-top: -100px;">
         <%= link_to root_path do %>
         <%= image_tag "logo.png" %>
         <% end %>
       </div>
+      <center>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn button ">Our Solutions </button>
+        <div id="myDropdown" class="dropdown-content dropright">
+          <a href="#home">Product Pages</a>
+          <a href="#about">Social Media </a>
+          <a href="#contact">Videos</a>
+          <a href="#contact">Online Communities</a>
+        </div>
+      </div>
+      </center>
       <br>
-      <br><br>
-      <ul>
-        <h1 style="color:#4d76d2;">Harness the power of product reviews & customer ratings.
-        </h1>
-      </ul>
-      <%if !user_signed_in?%>
-      <button class="button" style="margin-left:40px;margin-top:50px;"><%= link_to "Get Started", user_session_path	 %></button>
-      <%end%>
+      <center>
+        <div class="dropdown">
+          <button onclick="myyFunction()" class="dropbtn1 dropbtn button ">Use Cases</button>
+          <div id="myDropdown1" class="dropdown-content1 dropdown-content dropright" style="margin-left:-10px;">
+            <a href="#home">E-commerce</a>
+            <a href="#about">M-commerce </a>
+            <a href="#contact">Customer Experience Management</a>
+            <a href="#contact">Customer Relationship Management</a>
+          </div>
+        </div>
+      </center>
+      <center>
+      <button class="button" style="margin-top:200px;"><%= link_to "Contact", about_path	 %></button>
+    </center>
+    <center>
+      <button class="button" style="margin-top:10px;"><%= link_to "Log In", user_session_path	 %></button>
+      <br>
+    </center>
+    <center>
+      <button class="button" style="margin-top:10px;"><%= link_to "Sign up", new_user_registration_path %></button>
 	  </div>
-
-
-    <div id="main_content">
-
-        <% flash.each do |name, msg|%>
-          <%= content_tag(:div, msg, class:"alert") %>
-        <% end %>
+    </center>
+    <div>
+    <% flash.each do |name, msg|%>
+      <%= content_tag(:div, msg, class:"alert") %>
+    <% end %>
     <%= yield %>
-  </div>
+    </div>
+    <script>
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+      function myyFunction() {
+        document.getElementById("myDropdown1").classList.toggle("show");
+      }
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn1')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content1");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+      </script>
+      
   </body>
 </html>
