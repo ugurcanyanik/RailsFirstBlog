@@ -1,32 +1,45 @@
-<div id="main_content">
-<div id="page_wrapper">
-<h2 style="color:white">Sign up</h2>
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<body style="background-size:120%; background-repeat:no-repeat; height: 100%;
+ background-image: url(<%= asset_path 'login.png'%>)" >
+ <div id="main_content">
+ <div id="page_wrapper">
+ <h2 style="color:white">Sign up</h2>
+ 
+ <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+   <%= render "devise/shared/error_messages", resource: resource %>
+ 
+   <div class="field"  style="color:white">
+     <%= f.label :email %><br />
+     <%= f.email_field :email, autofocus: true, autocomplete: "email", style:"width:500px;" %>
+   </div>
+   <br>
+   <div class="field"  style="color:white">
+     <%= f.label :password %>
+     <% if @minimum_password_length %>
+     <em>(<%= @minimum_password_length %> characters minimum)</em>
+     <% end %><br />
+     <%= f.password_field :password, autocomplete: "new-password", style:"width:500px;" %>
+   </div>
+   <br>
+   <div class="field"  style="color:white">
+     <%= f.label :password_confirmation %><br />
+     <%= f.password_field :password_confirmation, autocomplete: "new-password", style:"width:500px;" %>
+   </div>
+   <br>
+   <div class="actions"  style="color:white">
+     <%= f.submit "Sign up", style:"color:white"%>
+   </div>
+ <% end %>
+ 
+ </div>
+ </div>
+</body>
+</html> 
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field"  style="color:white">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", style:"width:500px;" %>
-  </div>
-  <br>
-  <div class="field"  style="color:white">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", style:"width:500px;" %>
-  </div>
-  <br>
-  <div class="field"  style="color:white">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", style:"width:500px;" %>
-  </div>
-  <br>
-  <div class="actions"  style="color:white">
-    <%= f.submit "Sign up", style:"color:white"%>
-  </div>
-<% end %>
 
-</div>
-</div>
