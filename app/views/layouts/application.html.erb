@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Enhance Your Customer Experience with AI based solutions | Pinsightaicon </title>
+    <%= favicon_link_tag asset_path('titleLogo.png') %>
+    <title> Enhance Your Customer Experience | Pinsightai </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
@@ -44,13 +45,13 @@
       <button class="button" style="margin-top:300px;"><%= link_to "Contact", about_path	 %></button>
     </center>
     <center>
-      <button class="button" style="margin-top:10px;"><%= link_to "Log In", user_session_path	 %></button>
+      <button class="button" style="margin-top:10px;"><%= link_to "Log In", new_user_session_path	 %></button>
       <br>
     </center>
     <center>
       <button class="button" style="margin-top:10px;"><%= link_to "Sign up", new_user_registration_path %></button>
-	  </div>
-    </center>
+	  </center>
+    </div>
     <div>
     <% flash.each do |name, msg|%>
       <%= content_tag(:div, msg, class:"alert") %>
