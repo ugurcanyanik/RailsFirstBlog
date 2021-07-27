@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+    <title>Contact | Alstar</title>
+  </head>
+  <body style="background-image: url(<%= asset_path 'contact.png' %>); background-size: cover; background-attachment: fixed;">
+    <div id="main_content" style="float:left">
+        <div id="page_wrapper">
+          <div  style="margin-left:-250px;">
+            <h1 style="color:black"> Reach Us About</h1>
+            <h1 style="color:black"> Alstar’s Software</h1>
+          </div>
+          <br><br><br><br>
+          <div class="container">
+          <div class="row">
+            <div class="col-sm" style="background-color: #EFEFEF; margin-left:-300px;height:250px;width:450px;border-radius:  40px/40px; opacity:0.8">
+              <center>
+                <br>
+                <h1 style="color:black; margin-top:50px;">Call</h1>
+                <h1 style="color:black">+905425615106</h1>
+              </center>
+            </div>
+            <div class="col-sm"style="background-color: #EFEFEF; margin-left:60px;height:250px;width:450px;border-radius:  40px/40px;opacity:0.8">
+              <center>
+                <br>
+                <h1 style="color:black;margin-top:50px;">E-mail</h1>
+                <h1 style="color:black">cloud@alstar.xyz</h1>
+              </center>
+            </div>
+            <div class="col-sm"style="background-color: #EFEFEF; margin-left:60px;height:250px;width:450px;border-radius:  40px/40px;opacity:0.8">
+              <center>
+                <br>
+                <h1 style="color:black;margin-top:50px;">Book</h1>
+                <h1 style="color:black">sales@alstar.xyz</h1>
+              </center>
+            </div>
+          </div>
+          <br><br>
+          <div style="margin-left:-300px;">
+            <h6 style="font-size:13px;font-weight:1000">All rights reserved</h6>
+            <h6 style="font-size:13px;font-weight:1000">Business Legal Name: Kurtur Turizm Otelcilik Seracılık Gıda Tarım Soğuk Hava Hayvancılık Pazarlama Sanayi ve Ticaret AŞ</h6>
+            <h6 style="font-size:13px;font-weight:1000">Tax No: 5960070412</h6>
+            <h6 style="font-size:13px;font-weight:1000">Business Address: Fatih Mah.118 Kızılhamam Sok. No:12 Pamukkale Denizli</h6>
+          </div>
+      </div> 
+    </div>
+    <script>
+      var body = document.getElementsByTagName('body')[0];
+      body.style.backgroundImage = 'url(<%= asset_path 'contact.png'%>)';
+
+    </script>
+  </body>
+</html> 
